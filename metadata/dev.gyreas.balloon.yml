@@ -1,37 +1,35 @@
-AuthorName: Saheed Adeleye
-AuthorEmail: dev.gyreas@gmail.com
-
 Name: Balloon
 
 Categories:
-  - System
   - Launcher
+  - System
   - Task
 
 License: MIT
+AuthorName: Saheed Adeleye
+AuthorEmail: dev.gyreas@gmail.com
 SourceCode: https://github.com/gyreas/balloon
 
 RepoType: git
 Repo: https://github.com/gyreas/balloon
 
-AutoUpdateMode: Version
-UpdateCheckMode: Tags
-CurrentVersion: '0.1.8'
-CurrentVersionCode: 1
-
 Builds:
-  - versionName: '0.1.8'
+  - versionName: 0.1.8
     versionCode: 1
     commit: v0.1.8
     subdir: .
-
     sudo:
+      echo "This is acting -- Sia"
     init:
-      wget https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.35.5-stable.tar.xz
-      mkdir ~/develop/
-      tar -xf flutter_linux_3.35.5-stable.tar.xz -C ~/develop/
-      export PATH="~/develop/flutter/bin/:$PATH"
-      cd ~/develop/
+      curl https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.35.5-stable.tar.xz;
+      mkdir ~/develop/;
+      tar -xf flutter_linux_3.35.5-stable.tar.xz -C ~/develop/;
+      export PATH="~/develop/flutter/bin/:$PATH";
+      cd ~/develop/flutter;
+      flutter version
+    build: flutter build apk;
 
-    build:
-      flutter build apk
+AutoUpdateMode: Version
+UpdateCheckMode: Tags
+CurrentVersion: 0.1.8
+CurrentVersionCode: 1
